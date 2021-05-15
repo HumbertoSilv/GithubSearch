@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+    .container input {
+        width: 45vw;
+        height: 50px;
+        border: none;
+        padding: 8px;
+        border-radius: 10px 0 0 10px;
+    }
+
+    .container button {
+        cursor: pointer;
+        width: 15vw;
+        border: none;
+        border-radius: 0 10px 10px 0;
+        background-color: #0079fc;
+        color: #fff;
+        font-size: 1.4em;
+    }
