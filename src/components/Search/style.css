@@ -1,7 +1,7 @@
 .container {
     display: flex;
     justify-content: center;
-    margin-top: 60px;
+    margin: 50px 0;
 }
     .container input {
         width: 45vw;
@@ -19,4 +19,7 @@
         background-color: #0079fc;
         color: #fff;
         font-size: 1.4em;
+    }
+    .container button:hover {
+        background-color: #074f9c;   
     }
