@@ -1,12 +1,6 @@
-import { useState } from 'react';
 import './style.css';
-const Search = ({date, setFound}) => {
-    const [search, setSearch] = useState('');
+const Search = ({date, search, setSearch, filter}) => {
 
-    const handleSearch = () => {
-        const match = date.filter((cur) => cur.company.toLocaleLowerCase() === search.toLocaleLowerCase().trim());
-        setFound(match);
-    }
     return(
         <div className="container">
             <input 
@@ -14,7 +8,7 @@ const Search = ({date, setFound}) => {
                 onChange={(e) => {setSearch(e.target.value)}}
                 placeholder="Digite o nome do repositório">    
             </input>
-            <button onClick={handleSearch}>Pesquisar</button>
+            <button onClick={() => filter()}>Pesquisar</button>
         </div>
     );
 }

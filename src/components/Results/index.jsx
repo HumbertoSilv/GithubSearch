@@ -1,30 +1,22 @@
 import './style.css';
 
-const Results = ({date, found}) => {
-
+const Results = ({date, error}) => {
     return(
         <div>
             {
-                found === undefined? 
-                    date.map((cur) => (
-                    <div className="card">
-                    <img src={cur.company_logo? cur.company_logo : "https://github.githubassets.com/images/modules/open_graph/github-mark.png"} alt={cur.company} />
-                    <div>
-                        <a href={cur.url}>{cur.company}</a>
-                        <p>{cur.title}</p>
+                error? 
+                    <div className="error">
+                        <p>Not Found</p>
                     </div>
-                    </div>
-                ))
                 :
-                    found.map((cur) => (
-                    <div className="card">
-                    <img src={cur.company_logo? cur.company_logo : "https://github.githubassets.com/images/modules/open_graph/github-mark.png"} alt={cur.company} />
+                date.map((cur) => (
+                <div className="card">
+                    <img src={cur.owner.avatar_url} alt={cur.full_name} />
                     <div>
-                    <a href={cur.url}>{cur.company}</a>
-                        <p>{cur.title}</p>
+                        <a href={cur.html_url}>{cur.full_name}</a>
+                        <p>{cur.description}</p>
                     </div>
-                    </div>
-                ))
+                </div>))
             }
         </div>
     );
