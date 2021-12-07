@@ -2,12 +2,14 @@ import { useState } from "react";
 import Results from "./components/Results";
 import Search from "./components/Search";
 import Loading from "./components/Loading";
+import { Images } from "./components/Images";
 
 function App() {
-  const [date, setdate] = useState([]);
+  const [data, setdata] = useState([]);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState('');
   const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const filter = () => {
     setLoading(true)
@@ -17,15 +19,18 @@ function App() {
         response.message ?
           setError(true, setLoading(false)) 
           :
-          setdate([response], setLoading(false), setError(false)) 
+          setdata(response, setLoading(false), setError(false)) 
+          setSuccess(true)
       })
+      
   }
 
   return (
     <div>
-      <Search filter={filter} date={date} search={search} setSearch={setSearch}/>
+      <Search filter={filter} data={data} search={search} setSearch={setSearch}/>
       {loading && <Loading/>}
-      <Results date={date} error={error} setLoading={setLoading} setError={setError}/>
+      {success && <Results data={data} error={error}/>}
+      <Images />
     </div>
   );
 }

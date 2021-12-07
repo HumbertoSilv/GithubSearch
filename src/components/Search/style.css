@@ -9,6 +9,9 @@
         border: none;
         padding: 8px;
         border-radius: 10px 0 0 10px;
+        font-size: 1em;
+        color: #484848;
+        padding: 15px;
     }
 
     .container button {
@@ -16,10 +19,10 @@
         width: 15vw;
         border: none;
         border-radius: 0 10px 10px 0;
-        background-color: #0079fc;
+        background-color: #414142;
         color: #fff;
         font-size: 1.4em;
     }
     .container button:hover {
-        background-color: #074f9c;   
+        background-color: #171818;   
     }
